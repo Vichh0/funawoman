@@ -5,69 +5,46 @@ using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Transform floorController;
-    [SerializeField] private float distance;
-
-    [SerializeField] private bool movingRight;
+    private float speed;
 
     private Rigidbody2D rb;
-    private Collider2D col;
 
     private void Start()
     {
-        floorController = gameObject.GetComponentInChildren<Transform>();
-        col = GetComponent<Collider2D>();
+        speed = 4f;
+
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        bool floorInfo;
-
-        if (Physics2D.Raycast(floorController.position + Vector3.down * distance, Vector2.down, 0.1f))
+        // Si no hay piso, gira
+        if (!Physics2D.Raycast(transform.position + Vector3.down * 2.5f, Vector2.down, 0.1f))
         {
-            floorInfo = true;
-        }
-        else
-        {
-            floorInfo = false;
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            speed *= -1;
         }
 
-        Debug.DrawLine(floorController.position, floorController.position + Vector3.down * distance, Color.white);
-
+        //Avanza
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
-        if (!floorInfo)
-        {
-            movingRight = !movingRight;
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
-            speed *= -1;
-            floorInfo = true;
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(floorController.transform.position, floorController.transform.position + Vector3.down * distance);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Si toca jugador, acabar juego
         if (collision.collider.tag == "Player")
         {
             SceneManager.LoadScene(4);
         }
         else
         {
+            //Si toca algo que no es jugador, gira
             if (collision.transform.position.y > transform.position.y)
             {
-                movingRight = !movingRight;
-                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
                 speed *= -1;
             }
         }
-
     }
 }

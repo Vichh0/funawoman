@@ -6,18 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
+    [SerializeField] private float DetectionThreshold;
+
+    [SerializeField] private TextMeshProUGUI tm;
+
     private float DetectionTimer;
     private float LastDetectionTimer;
-
-    public float DetectionThreshold;
-
-    public TextMeshProUGUI tm;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

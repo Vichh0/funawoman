@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
 
     [Header("Horizontal Movement")]
 
@@ -35,16 +34,17 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Animation")]
 
-    private Animator animator;
 
     [Header("SceneStuff")]
 
     [SerializeField] private SceneManagement SceneManagement;
     [SerializeField] private string TargetScene;
+    public int TargetName;
 
+    private Rigidbody2D rb2D;
+    private Animator animator;
     private PlayerHookScript ph;
 
-    public int TargetName;
 
     // Start is called before the first frame update
     private void Start()
@@ -68,11 +68,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        
+    {    
         //Movement section
 
-        IsGrounded = Physics2D.OverlapBox(FloorControler.position, BoxDimensions, 0f, WhatIsFloor);
+        IsGrounded = Physics2D.Raycast(transform.position, Vector3.down, .1f, WhatIsFloor);
+
+        Debug.DrawRay(transform.position, Vector3.left * .1f, Color.magenta);
 
         if (!ph.hooked)
         {
@@ -136,13 +137,13 @@ public class PlayerMovement : MonoBehaviour
 
         rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, TargetVelocity, ref Speed, movementSmoothing);
 
-        if (move > 0 && !lookingRight)
+        if (Mathf.Sign(move) < 0)
         {
-            Turn();
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
         }
-        else if (move < 0 && lookingRight)
+        else
         {
-            Turn();
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
         if (Jump)
@@ -158,25 +159,8 @@ public class PlayerMovement : MonoBehaviour
                 canJump = false;
                 rb2D.AddForce(new Vector2(0f, JumpForce));
             }           
-        }       
+        }
     }
-
-    private void Turn()
-    {
-        lookingRight = !lookingRight;
-        Vector3 scale = transform.localScale;
-
-        scale.x *= -1;
-        transform.localScale = scale;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(FloorControler.position, BoxDimensions);
-    }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

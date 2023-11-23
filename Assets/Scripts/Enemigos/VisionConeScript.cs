@@ -7,13 +7,9 @@ using UnityEngine;
 
 public class VisionConeScript : MonoBehaviour
 {
-    public SceneManagement SceneManagement;
-
-    public Collider2D VisionConeCollider;
-
+    [SerializeField] private TimerScript ts;
+    
     private SpriteRenderer sr;
-
-    public TimerScript ts;
 
     private void Start()
     {
@@ -21,29 +17,21 @@ public class VisionConeScript : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        
+    {     
+        //Si el timer de deteccion es 0, volver al color base
         if(ts.getTimer() <= 0)
         {
             sr.color = Color.white;
-        }
-          
+        }      
     }
 
     private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("HidingWall"))
-        {
-            Physics2D.IgnoreCollision(VisionConeCollider , other);
-        }
-
+    {  
+        //Si ve al jugador, cambiar color a rojo y aumentar el timer de detección
         if (other.CompareTag("Player"))
         {
             ts.addTimer(Time.deltaTime);        
             sr.color = Color.red;
         }
-      
-
     }
-
 }

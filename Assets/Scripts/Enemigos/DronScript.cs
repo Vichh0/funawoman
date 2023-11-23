@@ -4,54 +4,38 @@ using UnityEngine;
 
 public class DronScript : MonoBehaviour
 {
-    public float leftBorder;
-    public float rightBorder;
+    [SerializeField] private float leftBorder;
+    [SerializeField] private float rightBorder;
 
-    public float speed;
+    private float speed;
 
     private Rigidbody2D rb;
-    public Collider2D col;
-
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
 
-        speed *= -1;
+        speed = -4f * transform.localScale.x;
 
         leftBorder = transform.position.x - leftBorder;
         rightBorder = transform.position.x + rightBorder;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (speed > 0)
+            //Avanza
+        if (transform.position.x <= rightBorder && transform.position.x >= leftBorder)
         {
-            if (transform.position.x < rightBorder)
-            {
-                rb.velocity = new Vector2 (speed, rb.velocity.y);
-            }
-            else
-            {
-                speed*= -1;
-                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
-            }
+            rb.velocity = new Vector2 (speed, rb.velocity.y);
         }
         else
         {
-            if (transform.position.x > leftBorder)
-            {
-                rb.velocity = new Vector2(speed, rb.velocity.y);
-            }
-            else
-            {
-                speed*= -1;
-                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
-            }
+            //Si llega al limite, gira
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            speed *= -1;
+            rb.velocity = new Vector2(speed, rb.velocity.y);
         }
-
     }
 }
