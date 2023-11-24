@@ -17,12 +17,11 @@ public class CanvasScript : MonoBehaviour
         else
         {
             SceneManager.LoadScene(scene);
-        }
-        
+        } 
     }
 
     public void Quit()
-    {
+    {   
         Debug.Log("Has Salido del juego");
         Application.Quit();
     }
