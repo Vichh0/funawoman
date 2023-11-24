@@ -25,9 +25,11 @@ public class EnemyScript : MonoBehaviour
             speed *= -1;
         }
 
+
+        Debug.Log(speed);
+
         //Avanza
         rb.velocity = new Vector2(speed, rb.velocity.y);
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,7 +37,7 @@ public class EnemyScript : MonoBehaviour
         //Si toca jugador, acabar juego
         if (collision.collider.tag == "Player")
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(6);
         }
         else
         {

@@ -20,6 +20,12 @@ public class CanvasScript : MonoBehaviour
         } 
     }
 
+    public void Retry()
+    {
+        int scene = PlayerPrefs.GetInt("LastPlayedScene");
+        SceneManager.LoadScene(scene);
+    }
+
     public void Quit()
     {   
         Debug.Log("Has Salido del juego");

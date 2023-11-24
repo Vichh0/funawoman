@@ -45,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private PlayerHookScript ph;
 
+    private float baseStretch;
+    private float baseRigidS;
+
+
 
     // Start is called before the first frame update
     private void Start()
@@ -52,6 +56,9 @@ public class PlayerMovement : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         ph = GetComponent<PlayerHookScript>();
+
+        baseStretch = transform.localScale.y;
+        baseRigidS = rb2D.transform.localScale.y;
     }
 
     // Update is called once per frame
@@ -79,6 +86,26 @@ public class PlayerMovement : MonoBehaviour
         {
             Move(horizontalMovement * Time.fixedDeltaTime, jump);
         }
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, baseStretch / 2, transform.localScale.z);
+            rb2D.transform.localScale = new Vector3(rb2D.transform.localScale.x, baseRigidS / 2, rb2D.transform.localScale.z);
+            Debug.DrawRay(transform.position + Vector3.up * 3, Vector2.up * 3f, Color.magenta);
+        }
+        else
+        {
+            if (Physics2D.Raycast(transform.position + Vector3.up * 3, Vector2.up, 3f))
+            {
+
+            }
+            else
+            {
+                transform.localScale = new Vector3(transform.localScale.x, baseStretch, transform.localScale.z);
+                rb2D.transform.localScale = new Vector3(rb2D.transform.localScale.x, baseRigidS, rb2D.transform.localScale.z);
+            }
+        }
+
 
         jump = false;
 
@@ -141,7 +168,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
         }
-        else
+        else if(move == 0)
+        {
+
+        }
+        else if (Mathf.Sign(move) > 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
@@ -168,12 +199,6 @@ public class PlayerMovement : MonoBehaviour
         {
             this.tag = "HidingPlayer";
             this.gameObject.layer = 9;
-        }
-
-        if(collision.tag == "Exit")
-        {
-            Debug.Log(TargetName);
-            SceneManager.LoadScene(TargetName);
         }
     }
 

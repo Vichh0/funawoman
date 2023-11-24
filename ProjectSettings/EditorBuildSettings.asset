@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/tutoriales/esconderjuego.unity
     guid: 470fb8dd719783c4ebd05c0c24c14a63
   - enabled: 1
+    path: Assets/Scenes/tutoriales/finaltutoriales.unity
+    guid: 71d540da4ab83a348b9c385e7e5b89ac
+  - enabled: 1
     path: Assets/Scenes/niveles/Level2Scene.unity
     guid: 1db8aea28cf238844b43600d470b4f49
   - enabled: 1
