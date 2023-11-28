@@ -25,12 +25,6 @@ public class PlayerHookScript : MonoBehaviour
             rh = Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f);
         }
 
-        if(rh.collider != null)
-        {
-            Debug.Log(rh.collider.tag);
-        }
-
-
         Debug.DrawLine(transform.position + Vector3.up * 6f, transform.position + Vector3.up * 9f, Color.red);
         
         if(Input.GetKeyDown(KeyCode.E)) 
