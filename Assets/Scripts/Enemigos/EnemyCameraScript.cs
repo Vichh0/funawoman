@@ -10,12 +10,16 @@ public class EnemyCameraScript : MonoBehaviour
     private int act = 0;
 
     [SerializeField] private GameObject cono;
-    private float rot;
+    [SerializeField] private float rot;
+    [SerializeField] private bool leftFirst;
 
     // Start is called before the first frame update
     void Start()
     {
-        rot = 30;
+        if (leftFirst)
+        {
+            rot *= -1;
+        }
     }
 
     // Update is called once per frame

@@ -101,6 +101,8 @@ MonoBehaviour:
   maxUp: 0
   maxDown: 0
   cono: {fileID: 0}
+  rot: 30
+  leftFirst: 0
 --- !u!1001 &6323811981474311094
 PrefabInstance:
   m_ObjectHideFlags: 0
