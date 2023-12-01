@@ -53,7 +53,8 @@ public class PlayerHookScript : MonoBehaviour
             }
             else
             {
-
+                capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide);
+                capsuleCollider.offset = new Vector2(capsuleCollider.offset.x, baseCollPos);
                 hooked = false;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
@@ -75,8 +76,7 @@ public class PlayerHookScript : MonoBehaviour
         else
         {
             animator.SetBool("IsHooked", false);
-            capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide);
-            capsuleCollider.offset = new Vector2(capsuleCollider.offset.x, baseCollPos);
+            
         }
 
     }
