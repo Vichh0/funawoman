@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSmoothing;
 
     private Vector3 Speed = Vector3.zero;
-    private bool lookingRight = true;
 
     [Header("Vertical Movement")]
 
@@ -42,11 +41,12 @@ public class PlayerMovement : MonoBehaviour
     public int TargetName;
 
     private Rigidbody2D rb2D;
+    private CapsuleCollider2D capsuleCollider;
     private Animator animator;
     private PlayerHookScript ph;
 
-    private float baseStretch;
-    private float baseRigidS;
+    private float baseCollide;
+    private float baseCollPos;
 
 
 
@@ -54,11 +54,12 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {     
         rb2D = GetComponent<Rigidbody2D>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
         ph = GetComponent<PlayerHookScript>();
 
-        baseStretch = transform.localScale.y;
-        baseRigidS = rb2D.transform.localScale.y;
+        baseCollide = capsuleCollider.size.y;
+        baseCollPos = capsuleCollider.offset.y;
     }
 
     // Update is called once per frame
@@ -70,15 +71,21 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
-
-        
     }
 
     private void FixedUpdate()
     {    
+
+
         //Movement section
 
         IsGrounded = Physics2D.Raycast(transform.position, Vector3.down, .1f, WhatIsFloor);
+
+        if (IsGrounded)
+        {
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", false);
+        }
 
         Debug.DrawRay(transform.position, Vector3.left * .1f, Color.magenta);
 
@@ -89,20 +96,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            transform.localScale = new Vector3(transform.localScale.x, baseStretch / 2, transform.localScale.z);
-            rb2D.transform.localScale = new Vector3(rb2D.transform.localScale.x, baseRigidS / 2, rb2D.transform.localScale.z);
+            animator.SetBool("IsCrouching", true);
+
+            capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide / 2);
+            capsuleCollider.offset = new Vector2(capsuleCollider.offset.x, baseCollPos - baseCollide / 4);
             Debug.DrawRay(transform.position + Vector3.up * 3, Vector2.up * 3f, Color.magenta);
         }
         else
         {
-            if (Physics2D.Raycast(transform.position + Vector3.up * 3, Vector2.up, 3f))
+            if (Physics2D.Raycast(transform.position + Vector3.up * 3, Vector2.up, 3f, WhatIsFloor))
             {
 
             }
             else
-            {
-                transform.localScale = new Vector3(transform.localScale.x, baseStretch, transform.localScale.z);
-                rb2D.transform.localScale = new Vector3(rb2D.transform.localScale.x, baseRigidS, rb2D.transform.localScale.z);
+            { 
+                capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide);
+                capsuleCollider.offset = new Vector2(capsuleCollider.offset.x, baseCollPos);
+                animator.SetBool("IsCrouching", false);
             }
         }
 
@@ -133,18 +143,9 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsFalling", true);
         }
-        else
-        {
-            animator.SetBool("IsFalling", false);
-        }
-
         if (rb2D.velocity.y > 0 && IsGrounded == false)
         {
             animator.SetBool("IsJumping", true);
-        }
-        else
-        {
-            animator.SetBool("IsJumping", false);
         }
 
         if (horizontalMovement == 0 && IsGrounded == true)

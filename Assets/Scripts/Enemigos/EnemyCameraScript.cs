@@ -21,28 +21,33 @@ public class EnemyCameraScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(rot + ", " + act);
-
-        if(rot > 0)
+        if(maxDown == 0 && maxUp == 0)
         {
-            cono.transform.RotateAround(transform.position, Vector3.forward, rot * Time.deltaTime);
-            act++;
 
-            if (act > maxUp)
-            {
-                rot = Mathf.Abs(rot) * -1;
-            }
         }
-
-        if(rot < 0)
+        else
         {
-            cono.transform.RotateAround(transform.position, Vector3.forward, rot * Time.deltaTime);
-            act--;
-    
-            if (act < maxDown)
+            if(rot > 0)
             {
-                rot = Mathf.Abs(rot);
+                cono.transform.RotateAround(transform.position, Vector3.forward, rot * Time.deltaTime);
+                act++;
+
+                if (act > maxUp)
+                {
+                    rot = Mathf.Abs(rot) * -1;
+                }
             }
-        }      
+
+            if(rot < 0)
+            {
+                cono.transform.RotateAround(transform.position, Vector3.forward, rot * Time.deltaTime);
+                act--;
+    
+                if (act < maxDown)
+                {
+                    rot = Mathf.Abs(rot);
+                }
+            }      
+        }
     }
 }

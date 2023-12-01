@@ -393,11 +393,11 @@ PrefabInstance:
       objectReference: {fileID: 942993626}
     - target: {fileID: 7599074489555380850, guid: 99986f2c00518ce409d837f1959518ee, type: 3}
       propertyPath: maxUp
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7599074489555380850, guid: 99986f2c00518ce409d837f1959518ee, type: 3}
       propertyPath: maxDown
-      value: 30
+      value: -50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -412,6 +412,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1330237068639931820, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5229138896587633556, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
       propertyPath: m_Name
       value: Mono Jugador

@@ -25,9 +25,6 @@ public class EnemyScript : MonoBehaviour
             speed *= -1;
         }
 
-
-        Debug.Log(speed);
-
         //Avanza
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }

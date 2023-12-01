@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class PlayerHookScript : MonoBehaviour
 {
-    private CapsuleCollider2D capu;
+    private CapsuleCollider2D capsuleCollider;
     private Rigidbody2D rb;
     private RaycastHit2D rh;
+    private Animator animator;
 
     public bool hooked = false;
+    private float baseCollide;
+    private float baseCollPos;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        capu = GetComponent<CapsuleCollider2D>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        animator = GetComponent<Animator>();
+
+        baseCollide = capsuleCollider.size.y;
+        baseCollPos = capsuleCollider.offset.y;
     }
 
     // Update is called once per frame
@@ -34,6 +41,8 @@ public class PlayerHookScript : MonoBehaviour
                 if(Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f))
                 {
 
+                    
+
                     Debug.Log("hooking");
 
                     hooked = true;
@@ -44,6 +53,7 @@ public class PlayerHookScript : MonoBehaviour
             }
             else
             {
+
                 hooked = false;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
@@ -51,12 +61,22 @@ public class PlayerHookScript : MonoBehaviour
 
         if (hooked)
         {
-            if(rh.collider.tag == "Hookable")
+            animator.SetBool("IsHooked", true);
+
+            if (rh.collider.tag == "Hookable")
             {
-                float posY = rh.transform.position.y - Mathf.Abs(rh.collider.bounds.extents.y) - capu.size.y;
+                float posY = rh.transform.position.y - Mathf.Abs(rh.collider.bounds.extents.y) - baseCollide;
 
                 this.transform.position = new Vector3(rh.transform.position.x, posY, transform.position.z);
+                capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide / 2);
+                capsuleCollider.offset = new Vector2(capsuleCollider.offset.x, baseCollPos - baseCollide / 8);
             }
+        }
+        else
+        {
+            animator.SetBool("IsHooked", false);
+            capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide);
+            capsuleCollider.offset = new Vector2(capsuleCollider.offset.x, baseCollPos);
         }
 
     }

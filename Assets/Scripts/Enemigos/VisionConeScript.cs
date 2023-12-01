@@ -11,6 +11,8 @@ public class VisionConeScript : MonoBehaviour
     
     private SpriteRenderer sr;
 
+    private AudioSource aS;
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -30,6 +32,11 @@ public class VisionConeScript : MonoBehaviour
         //Si ve al jugador, cambiar color a rojo y aumentar el timer de detección
         if (other.CompareTag("Player"))
         {
+            if(ts.getTimer() == 0)
+            {
+                other.gameObject.GetComponent<AudioSource>().Play();
+            }
+
             ts.addTimer(Time.deltaTime);        
             sr.color = Color.red;
         }

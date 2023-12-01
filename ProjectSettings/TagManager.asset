@@ -9,6 +9,7 @@ TagManager:
   - HidingPlayer
   - Hookable
   - Exit
+  - Music
   layers:
   - Default
   - TransparentFX

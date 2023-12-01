@@ -685,7 +685,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.15
+  m_fontSize: 36.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -878,6 +878,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35ff3d2e7f9474b4e8ddd5fdc935eab1, type: 3}
+--- !u!1001 &442241906
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2089657949293414941, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_Name
+      value: StopMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 630.32184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 287.58014
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.500965
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518446625470832078, guid: 304d413a44a13fe419354a07edacb396, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 304d413a44a13fe419354a07edacb396, type: 3}
 --- !u!1001 &493698446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2555,7 +2612,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.15
+  m_fontSize: 36.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3196,6 +3253,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mono Jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 5735067347317892069, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.998664
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735067347317892069, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735067347317892069, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735067347317892069, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.051674493
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735067347317892069, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -5.924
+      objectReference: {fileID: 0}
     - target: {fileID: 6366326032454380535, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.33
@@ -3580,6 +3657,7 @@ SceneRoots:
   - {fileID: 985901102}
   - {fileID: 1895715663}
   - {fileID: 1106571810}
+  - {fileID: 442241906}
   - {fileID: 856851299}
   - {fileID: 1231053564}
   - {fileID: 1642989877}
