@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
-    private float speed;
+    [SerializeField] private float speed;
 
     private Rigidbody2D rb;
 
     private void Start()
     {
-        speed = 4f;
-
         rb = GetComponent<Rigidbody2D>();
     }
 
