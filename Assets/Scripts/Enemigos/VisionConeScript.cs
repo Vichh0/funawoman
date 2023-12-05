@@ -11,8 +11,6 @@ public class VisionConeScript : MonoBehaviour
     
     private SpriteRenderer sr;
 
-    private AudioSource aS;
-
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();

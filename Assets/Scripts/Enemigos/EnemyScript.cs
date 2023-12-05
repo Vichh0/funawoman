@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
         //Si toca jugador, acabar juego
         if (collision.collider.tag == "Player")
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene("DefeatScene");
         }
         else
         {

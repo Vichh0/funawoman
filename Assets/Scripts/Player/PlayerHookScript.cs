@@ -27,28 +27,22 @@ public class PlayerHookScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f))
-        {
-            rh = Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f);
-        }
-
         Debug.DrawLine(transform.position + Vector3.up * 6f, transform.position + Vector3.up * 9f, Color.red);
         
         if(Input.GetKeyDown(KeyCode.E)) 
         {
             if (!hooked)
             {
-                if(Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f))
+                if(rh = Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f))
                 {
 
-                    
+                    if(rh.collider.tag == "Hookable" && rh.collider.tag == "Ground")
+                    {
+                        hooked = true;
+                        rb.velocity = Vector3.zero;
 
-                    Debug.Log("hooking");
-
-                    hooked = true;
-                    rb.velocity = Vector3.zero;
-
-                    rb.constraints = RigidbodyConstraints2D.FreezePositionY|RigidbodyConstraints2D.FreezeRotation;
+                        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+                    }   
                 }
             }
             else
@@ -78,6 +72,5 @@ public class PlayerHookScript : MonoBehaviour
             animator.SetBool("IsHooked", false);
             
         }
-
     }
 }

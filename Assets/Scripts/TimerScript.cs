@@ -18,7 +18,7 @@ public class TimerScript : MonoBehaviour
     {
         if (DetectionTimer > DetectionThreshold)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("DefeatScene");
         }
 
         if (LastDetectionTimer == DetectionTimer)
