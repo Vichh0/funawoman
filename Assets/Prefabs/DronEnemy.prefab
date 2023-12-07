@@ -148,8 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950ebb1d92d7a1240b1a8e48ba2cd5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneManagement: {fileID: 0}
-  VisionConeCollider: {fileID: 5795571327594662739}
   ts: {fileID: 0}
 --- !u!1 &6281661752731722613
 GameObject:
@@ -301,7 +299,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.55813956, y: 0.4999999}
     oldSize: {x: 8, y: 3.53}
     newSize: {x: 8, y: 3.53}
     adaptiveTilingThreshold: 0.5
@@ -325,4 +323,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftBorder: 5
   rightBorder: 5
-  col: {fileID: 0}

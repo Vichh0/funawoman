@@ -556,7 +556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -720, y: -402.89}
+  m_AnchoredPosition: {x: -685, y: 43}
   m_SizeDelta: {x: 289.14, y: 54.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1319420062
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Siguiente
+  m_text: Probarlo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1046,7 +1046,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Utiliza E para agarrarte a los drones enemigos y pasar obstaculos
+  m_text: 'Utiliza el boton "E" para agarrarte de alguna superficie solida o enemigos.
+
+
+    Esta
+    tecnica sirve para esquivar enemigos y sortear obstaculos relacionados con la
+    altura'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

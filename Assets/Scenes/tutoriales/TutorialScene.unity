@@ -463,11 +463,15 @@ MonoBehaviour:
 
     -Espacio para saltar.
 
-    -Evita
-    tocar los conos amarillos de vision por demasiado tiempo o perderas.
+    -CTRL
+    para agacharce.
 
-    -Recolecta
-    los orbes de informacion para ganar
+    -Evita tocar los conos amarillos de vision por demasiado
+    tiempo o perderas.
+
+    -Recolecta los orbes de informacion para ganar
+
+
 
 
 

@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Siguiente
+  m_text: Probarlo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -680, y: -392}
+  m_AnchoredPosition: {x: -605, y: -227}
   m_SizeDelta: {x: 408.01, y: 76.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &110384865
@@ -472,12 +472,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 52592669581363871, guid: 554b01b41ddb1924cbdc5315f9743599, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25616
+      objectReference: {fileID: 0}
+    - target: {fileID: 52592669581363871, guid: 554b01b41ddb1924cbdc5315f9743599, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25616
+      objectReference: {fileID: 0}
+    - target: {fileID: 52592669581363871, guid: 554b01b41ddb1924cbdc5315f9743599, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25616
+      objectReference: {fileID: 0}
+    - target: {fileID: 52592669581363871, guid: 554b01b41ddb1924cbdc5315f9743599, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 52592669581363871, guid: 554b01b41ddb1924cbdc5315f9743599, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.64
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 52592669581363871, guid: 554b01b41ddb1924cbdc5315f9743599, type: 3}
       propertyPath: m_LocalPosition.z
@@ -595,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6366326032454380535, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 6366326032454380535, guid: 48aa92d38bc64574892be1a30b419529, type: 3}
       propertyPath: m_LocalPosition.y
@@ -772,7 +784,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: -Utiliza las paredes grices para esconderte del enemigo y pasar desapercibido
+  m_text: "Posicionate detras de los montones de cajas para enga\xF1ar los escaneres
+    enemigos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

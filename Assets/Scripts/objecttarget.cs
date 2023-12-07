@@ -8,18 +8,24 @@ public class objecttarget : MonoBehaviour
     private int max;
     private int actual;
     [SerializeField] private TextMeshProUGUI textMeshPro;
-    [SerializeField] private Collider2D salida;
+    [SerializeField] private GameObject salida;
 
     //Obtiene el numero total de coleccionables del nivel
      public void setmax()
-    {
+     {
         max++;
-    }
+     }
 
     //Obtiene el numero de coleccionables recogidos
     public void addactual()
     {
         actual++;
+    }
+
+    public bool getState()
+    {
+        if(actual == max) return true;
+        else return false;
     }
 
     // Update is called once per frame
@@ -31,7 +37,7 @@ public class objecttarget : MonoBehaviour
         //Si los coleccionables recogidos son iguales a los totales, se activa la colision de la salida
         if(actual == max)
         {
-            salida.enabled = true;
+            salida.SetActive(true);
         }
     }
 }

@@ -27,7 +27,7 @@ public class PlayerHookScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawLine(transform.position + Vector3.up * 6f, transform.position + Vector3.up * 9f, Color.red);
+        Debug.DrawLine(transform.position + Vector3.up * 4.3f, transform.position + Vector3.up * 5f, Color.red);
         
         if(Input.GetKeyDown(KeyCode.E)) 
         {
@@ -36,7 +36,7 @@ public class PlayerHookScript : MonoBehaviour
                 if(rh = Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f))
                 {
 
-                    if(rh.collider.tag == "Hookable" && rh.collider.tag == "Ground")
+                    if(rh.collider.tag == "Hookable" || rh.collider.tag == "Ground")
                     {
                         hooked = true;
                         rb.velocity = Vector3.zero;
@@ -56,11 +56,13 @@ public class PlayerHookScript : MonoBehaviour
 
         if (hooked)
         {
+            rh = Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f);
+
             animator.SetBool("IsHooked", true);
 
             if (rh.collider.tag == "Hookable")
             {
-                float posY = rh.transform.position.y - Mathf.Abs(rh.collider.bounds.extents.y) - baseCollide;
+                float posY = rh.transform.position.y - Mathf.Abs(rh.collider.bounds.extents.y) - baseCollide / 2;
 
                 this.transform.position = new Vector3(rh.transform.position.x, posY, transform.position.z);
                 capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide / 2);
