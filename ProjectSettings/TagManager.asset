@@ -11,6 +11,8 @@ TagManager:
   - Exit
   - Music
   - Ground
+  - Plat
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: muros - copia (9) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3833617983948140584, guid: dcefe9d61533b134a9bb11b36fce68ab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6687336355248558220, guid: dcefe9d61533b134a9bb11b36fce68ab, type: 3}
       propertyPath: m_LocalScale.x
       value: -1

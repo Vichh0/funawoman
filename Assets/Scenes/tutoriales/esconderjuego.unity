@@ -1124,9 +1124,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05db5014316d7ea47a8e1da34329689a, type: 3}
---- !u!61 &619396154 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5236377726057665752, guid: 05db5014316d7ea47a8e1da34329689a, type: 3}
+--- !u!1 &619396154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5286991278416652178, guid: 05db5014316d7ea47a8e1da34329689a, type: 3}
   m_PrefabInstance: {fileID: 619396153}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &620877585
@@ -2519,6 +2519,10 @@ PrefabInstance:
     - target: {fileID: 3679705554308473822, guid: dcefe9d61533b134a9bb11b36fce68ab, type: 3}
       propertyPath: m_Name
       value: muros - copia (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833617983948140584, guid: dcefe9d61533b134a9bb11b36fce68ab, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6687336355248558220, guid: dcefe9d61533b134a9bb11b36fce68ab, type: 3}
       propertyPath: m_LocalPosition.x

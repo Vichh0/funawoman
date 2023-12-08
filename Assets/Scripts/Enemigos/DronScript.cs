@@ -7,7 +7,7 @@ public class DronScript : MonoBehaviour
     [SerializeField] private float leftBorder;
     [SerializeField] private float rightBorder;
 
-    private float speed;
+    [SerializeField] private float speed;
 
     private Rigidbody2D rb;
 
@@ -16,7 +16,7 @@ public class DronScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        speed = -4f * transform.localScale.x;
+        speed = speed * -1 * transform.localScale.x;
 
         leftBorder = transform.position.x - leftBorder;
         rightBorder = transform.position.x + rightBorder;

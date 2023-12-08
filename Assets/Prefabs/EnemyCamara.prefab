@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxUp: 0
   maxDown: 0
-  cono: {fileID: 0}
+  cono: {fileID: 8988352626569832329}
   rot: 30
   leftFirst: 0
 --- !u!1001 &6323811981474311094
@@ -116,12 +116,24 @@ PrefabInstance:
       value: ConoVision
       objectReference: {fileID: 0}
     - target: {fileID: 3974452233037299132, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -2.79277
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974452233037299132, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.408041
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974452233037299132, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2784
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974452233037299132, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.98
+      value: -4.68
       objectReference: {fileID: 0}
     - target: {fileID: 3974452233037299132, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.94
+      value: -6.83
       objectReference: {fileID: 0}
     - target: {fileID: 3974452233037299132, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -163,5 +175,10 @@ PrefabInstance:
 --- !u!4 &6983576976347928074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3974452233037299132, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
+  m_PrefabInstance: {fileID: 6323811981474311094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8988352626569832329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3134428832527174719, guid: d2c997774f06c6b4aa2fe229d03e36c1, type: 3}
   m_PrefabInstance: {fileID: 6323811981474311094}
   m_PrefabAsset: {fileID: 0}

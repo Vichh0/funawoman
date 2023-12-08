@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (Physics2D.Raycast(transform.position + Vector3.up * 3, Vector2.up, 3f, WhatIsFloor))
+            if (Physics2D.Raycast(transform.position + Vector3.up * 3, Vector2.up, 3f, WhatIsFloor) && Physics2D.Raycast(transform.position + Vector3.up * 3, Vector2.up, 3f, WhatIsFloor).collider.tag != "Plat")
             {
 
             }
@@ -135,6 +135,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 canJump = true;
             }
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = 900;
+        }
+        else
+        {
+            movementSpeed = 600;
         }
 
         //Animation section

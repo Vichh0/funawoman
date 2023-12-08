@@ -323,3 +323,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftBorder: 5
   rightBorder: 5
+  speed: 6

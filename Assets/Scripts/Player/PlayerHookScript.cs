@@ -62,7 +62,7 @@ public class PlayerHookScript : MonoBehaviour
 
             if (rh.collider.tag == "Hookable")
             {
-                float posY = rh.transform.position.y - Mathf.Abs(rh.collider.bounds.extents.y) - baseCollide / 2;
+                float posY = rh.transform.position.y - Mathf.Abs(rh.collider.bounds.extents.y) - baseCollide;
 
                 this.transform.position = new Vector3(rh.transform.position.x, posY, transform.position.z);
                 capsuleCollider.size = new Vector2(capsuleCollider.size.x, baseCollide / 2);
