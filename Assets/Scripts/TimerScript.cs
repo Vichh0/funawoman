@@ -36,7 +36,7 @@ public class TimerScript : MonoBehaviour
 
         LastDetectionTimer = DetectionTimer;
 
-        tm.text = DetectionTimer.ToString("0.00");
+        tm.text = (DetectionTimer * 100).ToString("0") + "%";
     }
 
     public void addTimer(float t)

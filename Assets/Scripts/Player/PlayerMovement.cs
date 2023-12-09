@@ -114,6 +114,15 @@ public class PlayerMovement : MonoBehaviour
                 capsuleCollider.offset = new Vector2(capsuleCollider.offset.x, baseCollPos);
                 animator.SetBool("IsCrouching", false);
             }
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                movementSpeed = 900;
+            }
+            else
+            {
+                movementSpeed = 600;
+            }
         }
 
 
@@ -136,15 +145,7 @@ public class PlayerMovement : MonoBehaviour
                 canJump = true;
             }
         }
-
-        if(Input.GetKey(KeyCode.LeftShift))
-        {
-            movementSpeed = 900;
-        }
-        else
-        {
-            movementSpeed = 600;
-        }
+    
 
         //Animation section
 
@@ -155,6 +156,11 @@ public class PlayerMovement : MonoBehaviour
         if (rb2D.velocity.y > 0 && IsGrounded == false)
         {
             animator.SetBool("IsJumping", true);
+        }
+
+        if (animator.GetBool("IsJumping"))
+        {
+            animator.SetBool("IsFalling", false);
         }
 
         if (horizontalMovement == 0 && IsGrounded == true)

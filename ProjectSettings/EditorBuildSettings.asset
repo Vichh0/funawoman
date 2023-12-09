@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/tutoriales/Tutoriales/MoveTutorial.unity
     guid: 62f01b24433b12a4299912ba63f9ee41
   - enabled: 1
-    path: Assets/Scenes/tutoriales/Agarrejuego.unity
+    path: Assets/Scenes/tutoriales/Tutoriales/AgarreTutorial.unity
     guid: 7a1e4df71fe5bdb4e998681b3b886ed0
   - enabled: 1
     path: Assets/Scenes/otros/DefeatScene.unity
@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/tutoriales/esconderjuego.unity
     guid: 470fb8dd719783c4ebd05c0c24c14a63
   - enabled: 1
-    path: Assets/Scenes/tutoriales/finaltutoriales.unity
+    path: Assets/Scenes/tutoriales/Tutoriales/TutorialFinal.unity
     guid: 71d540da4ab83a348b9c385e7e5b89ac
   - enabled: 1
     path: Assets/Scenes/niveles/Level3Scene.unity
@@ -50,4 +50,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tutoriales/Escondersetutorial.unity
     guid: e4fb7fe5c747fcd47823e9628f0a9954
+  - enabled: 1
+    path: Assets/Scenes/tutoriales/Tutoriales/ObjectiveTutorial.unity
+    guid: 63c1fd84e4baf1b4ab7bc0a3a224cf37
+  - enabled: 1
+    path: Assets/Scenes/tutoriales/Tutoriales/PlatformTutorial.unity
+    guid: 641f0094e5d98564e8ea4e1956e5dc59
+  - enabled: 1
+    path: Assets/Scenes/tutoriales/Tutoriales/HideTutorial.unity
+    guid: 9492bab1a18408f48a933e88bd1c357c
+  - enabled: 1
+    path: Assets/Scenes/tutoriales/Tutoriales/EnemyTutorial.unity
+    guid: 2375e276c09f9c14fb0635fed3cac734
+  - enabled: 1
+    path: Assets/Scenes/tutoriales/Tutoriales/CrouchJumpTutorial.unity
+    guid: 5a50f448ca37f0e41a4a9e52d77be022
+  - enabled: 1
+    path: Assets/Scenes/tutoriales/Tutoriales/BaseTutorial.unity
+    guid: c442699f171a14644a69c56b43026cd7
+  - enabled: 1
+    path: Assets/Scenes/tutoriales/Tutoriales/EnemyVariantTutorial.unity
+    guid: 976b1fc292868d34b847cc9f8f487239
   m_configObjects: {}

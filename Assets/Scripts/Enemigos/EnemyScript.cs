@@ -37,7 +37,7 @@ public class EnemyScript : MonoBehaviour
         else
         {
             //Si toca algo que no es jugador, gira
-            if (collision.collider.tag == "Wall" || (collision.collider.tag == "Plat" && Physics2D.Raycast(transform.position + Vector3.down * 2.5f, Vector2.down, 0.1f).collider.tag != "Plat"))
+            if (collision.collider.tag == "Wall" || (collision.collider.tag == "Plat" && Physics2D.Raycast(transform.position + Vector3.down * 2.5f, Vector2.down, 0.1f).collider.tag != "Plat") || collision.gameObject.layer == 6)
             {
                 transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
                 speed *= -1;

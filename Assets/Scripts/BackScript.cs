@@ -16,7 +16,7 @@ public class BackScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("TitleScene");
         }
     }
 }

@@ -36,7 +36,7 @@ public class PlayerHookScript : MonoBehaviour
                 if(rh = Physics2D.Raycast(transform.position + Vector3.up * 6f, Vector2.up, 3f))
                 {
 
-                    if(rh.collider.tag == "Hookable" || rh.collider.tag == "Ground")
+                    if(rh.collider.tag == "Hookable")
                     {
                         hooked = true;
                         rb.velocity = Vector3.zero;
