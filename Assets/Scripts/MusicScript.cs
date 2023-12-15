@@ -21,12 +21,15 @@ public class MusicClass : MonoBehaviour
         else
         {
             instance = this;
+            PlayerPrefs.SetFloat("MusicVol", 1);
+            PlayerPrefs.SetInt("Res", 2);
         }
         DontDestroyOnLoad(this.gameObject);
     }
 
     public void PlayMusic()
     {
+        _audioSource.volume = PlayerPrefs.GetFloat("MusicVol");
         if (_audioSource.isPlaying) return;
         _audioSource.Play();
     }

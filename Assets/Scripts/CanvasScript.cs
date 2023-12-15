@@ -31,4 +31,5 @@ public class CanvasScript : MonoBehaviour
         Debug.Log("Has Salido del juego");
         Application.Quit();
     }
+
 }

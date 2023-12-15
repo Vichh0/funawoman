@@ -5,23 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    [Header("Horizontal Movement")]
-
-    private float horizontalMovement = 0f;
+    private float horizontalMovement;
 
     [SerializeField] private float movementSpeed;    
     [SerializeField] private float movementSmoothing;
 
     private Vector3 Speed = Vector3.zero;
 
-    [Header("Vertical Movement")]
-
     [SerializeField] private float JumpForce;
     [SerializeField] private LayerMask WhatIsFloor;
-    [SerializeField] private Transform FloorControler;
-
-    [SerializeField] private Vector3 BoxDimensions;
     [SerializeField] private bool IsGrounded;
     [SerializeField] private bool canJump;
 
@@ -31,19 +23,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool jump = false;
 
-    [Header("Animation")]
-
-
-    [Header("SceneStuff")]
-
-    [SerializeField] private SceneManagement SceneManagement;
     [SerializeField] private string TargetScene;
-    public int TargetName;
 
     private Rigidbody2D rb2D;
     private CapsuleCollider2D capsuleCollider;
     private Animator animator;
     private PlayerHookScript ph;
+    private AudioSource aS;
 
     private float baseCollide;
     private float baseCollPos;
@@ -57,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
         ph = GetComponent<PlayerHookScript>();
+        aS = GetComponent<AudioSource>();
+
+        Debug.Log(PlayerPrefs.GetFloat("MusicVol"));
+
+        aS.volume = PlayerPrefs.GetFloat("MusicVol");
 
         baseCollide = capsuleCollider.size.y;
         baseCollPos = capsuleCollider.offset.y;

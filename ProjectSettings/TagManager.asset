@@ -13,6 +13,8 @@ TagManager:
   - Ground
   - Plat
   - Wall
+  - Options
+  - Pause
   layers:
   - Default
   - TransparentFX
